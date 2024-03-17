@@ -55,7 +55,7 @@ export default function Beverages() {
 
   return (
     <Layout>
-      <h1>BEBIDAS GELADINHAS</h1>
+      <h1>飲み物 (Bebidas)</h1>
       <ProductCategories>
         {categories.map((item, index) => (
           <CategoryList key={index} data={item} />

@@ -71,7 +71,7 @@ export default function Appetizers() {
 
   return (
     <Layout>
-      <h1>Entradinhas</h1>
+      <h1>禁止 (Entradinhas)</h1>
       <ProductCategories>
         {isLoading ? (
           <p>Carregando</p>
