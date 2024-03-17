@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button, CategoryList, Layout, ProductCard } from "../../components";
-import { ProductCategories, ProductWrapper } from "./Dessert.style";
+import { ProductCategories, ProductWrapper } from "./../Hamburgers/Hamburgers.style";
 
 import {
   ProductCardContent,
   ProductCardPrice,
 } from "../../components/ProductCard/ProductCard.style";
 
-export default function Desserts() {
+export default function Beverages() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,8 +32,8 @@ export default function Desserts() {
     setIsLoading(false);
   }
 
-  const getDesserts = async () => {
-    const url = "http://localhost:8000/desserts";
+  const getBeverages = async () => {
+    const url = "http://localhost:8000/beverages";
     setIsLoading(true);
     try {
       const response = await fetch(url);
@@ -50,39 +50,31 @@ export default function Desserts() {
   }, []);
   
   useEffect(() => {
-    getDesserts();
+    getBeverages();
   }, []);
 
   return (
     <Layout>
-      <h1>デザート (sobremesas)</h1>
+      <h1>BEBIDAS GELADINHAS</h1>
       <ProductCategories>
-        {isLoading ? (<p>Carregando</p>)
-          : (
-            categories.map((item, index) => (
-              <CategoryList key={index} data={item} />
-            ))
-          )}
+        {categories.map((item, index) => (
+          <CategoryList key={index} data={item} />
+        ))}
       </ProductCategories>
       <ProductWrapper>
-        {isLoading
-          ? (<p>Carregando</p>)
-          : (
-            products.map((product, index) => (
-              <ProductCard key={index}>
-                <ProductCardContent>
-                  <h2>{product.title}</h2>
-                  <p>{product.description}</p>
-                  <Button onClick={() => { }}>Adicionar</Button>
-                </ProductCardContent>
-                <ProductCardPrice>
-                  {priceFormat(product.value)}
-                </ProductCardPrice>
-                <img src={product.image[0]} alt={product.title} />
-              </ProductCard>
-            ))
-          )
-        }
+        {products.map((product, index) => (
+          <ProductCard key={index}>
+            <ProductCardContent>
+              <h2>{product.title}</h2>
+              <p>{product.description}</p>
+              <Button onClick={() => {}}>Adicionar</Button>
+            </ProductCardContent>
+            <ProductCardPrice>
+              {priceFormat(product.value)}
+            </ProductCardPrice>
+            <img src={product.image} alt={product.title} />
+          </ProductCard>
+        ))}
       </ProductWrapper>
     </Layout>
   );
