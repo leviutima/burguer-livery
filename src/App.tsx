@@ -5,16 +5,18 @@ import Appetizers from "./pages/Appetizers/Appetizers";
 import Login from "./pages/Login/Login";
 import Desserts from "./pages/Desserts/Desserts";
 import Combos from "./pages/Combos/Combos";
+import Beverages from "./pages/Bevereges/Bevereges";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/appetizers" element={<Appetizers />} />
+        <Route path="/Entradas" element={<Appetizers />} />
         <Route path="/hamburgers" element={<Hamburgers />} />
-        <Route path="/desserts" element={<Desserts/>} />
+        <Route path="/sobremesas" element={<Desserts/>} />
         <Route path="/combos" element={<Combos/>} />
+        <Route path="/bebidas" element={<Beverages/>} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
