@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CategoryList, Layout } from "../../components";
 import { ProductCategories } from "../Hamburgers/Hamburgers.style";
 
+
 export default function Appetizers() {
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState([]);
