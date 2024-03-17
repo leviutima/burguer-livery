@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, CategoryList, Layout, ProductCard } from "../../components";
 import { ProductCategories, ProductWrapper } from "./../Hamburgers/Hamburgers.style";
 import { ProductCardContent, ProductCardPrice } from "../../components/ProductCard/ProductCard.style";
+import { BotaoEntradinhas } from "./Appetizers.style";
 
 export default function Appetizers() {
   const [isLoading, setIsLoading] = useState(false);
@@ -90,6 +91,20 @@ export default function Appetizers() {
               <ProductCardContent>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
+                <BotaoEntradinhas>
+                <div>
+                    <input type="radio" id={`pequeno_${index}`} value="pequeno"
+                      checked={Appetizers[index] === "small"}
+                      onChange={() => escolherTamanho(index, "small")}/>
+                    <label htmlFor={`pequeno_${index}`}>Pequeno</label>
+                  </div>
+                  <div>
+                    <input type="radio" id={`grande_${index}`} value="grande"
+                      checked={Appetizers[index] === "large"}
+                      onChange={() => escolherTamanho(index, "large")}/>
+                    <label htmlFor={`grande_${index}`}>Grande</label>
+                  </div>
+                </BotaoEntradinhas>
                 <Button onClick={() => {}}>Adicionar</Button>
               </ProductCardContent>
               <ProductCardPrice>
