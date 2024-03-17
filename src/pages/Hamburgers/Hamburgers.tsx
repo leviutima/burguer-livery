@@ -74,7 +74,7 @@ export default function Hamburgers() {
 
   return (
     <Layout>
-      <h1>Hamburgers</h1>
+      <h1>ハンバーガー (Hamburguer)</h1>
       <ProductCategories>
         {isLoading ? (
           <p>Carregando</p>
