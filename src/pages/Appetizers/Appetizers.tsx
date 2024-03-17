@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CategoryList, Layout } from "../../components";
 import { ProductCategories } from "../Hamburgers/Hamburgers.style";
+import { BotaoEntradinhas } from "./Appetizers.style";
 
 
 import {
@@ -80,7 +81,7 @@ export default function Appetizers() {
               <ProductCardContent>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
-                <ButtonRadioAppettizers>
+                <BotaoEntradinhas>
                   <div>
                     <input
                       type="radio"
@@ -101,7 +102,7 @@ export default function Appetizers() {
                     />
                     <label htmlFor={`large_${index}`}>Large</label>
                   </div>
-                </ButtonRadioAppettizers>
+                </BotaoEntradinhas>
                 <Button onClick={() => { }}>Adicionar</Button>
               </ProductCardContent>
               <ProductCardPrice>
