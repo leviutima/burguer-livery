@@ -93,7 +93,7 @@ export default function Appetizers() {
                 <Button onClick={() => {}}>Adicionar</Button>
               </ProductCardContent>
               <ProductCardPrice>
-                {priceFormat(product.value)}
+                {priceFormat(product.values.small)}
               </ProductCardPrice>
               <img src={product.image} alt={product.title} />
             </ProductCard>
