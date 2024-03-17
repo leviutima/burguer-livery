@@ -55,7 +55,7 @@ export default function Combos() {
 
   return (
     <Layout>
-      <h1>O COMBÃO DA SUA VIDA</h1>
+      <h1>コンボ (COMBO)</h1>
       <ProductCategories>
         {isLoading ? (<p>Carregando</p>)
           : (
@@ -73,7 +73,7 @@ export default function Combos() {
                 <ProductCardContent>
                   <h1>COMBO</h1>
                   <h2>{product.title}</h2>
-                  <p>{`${product.description} +  BATATA E BEBIDA DE SUA ESCOLHA`}</p>
+                  <p>{`${product.description} +  BATATA TRACIDIONAL ACOMPANHANDO BEBIDA`}</p>
                   <Button onClick={() => { }}>Adicionar</Button>
                 </ProductCardContent>
                 <ProductCardPrice>
